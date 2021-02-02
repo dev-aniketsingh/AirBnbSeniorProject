@@ -3,10 +3,10 @@ title: "Data Visualization"
 author: "Aniket Singh"
 date: "2/1/2021"
 output:
-  html_document:
-    df_print: paged
   md_document:
     variant: gfm
+  html_document:
+    df_print: paged
 ---
 
 ```{r Loading the packages}
