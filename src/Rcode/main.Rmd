@@ -1,13 +1,16 @@
 ---
-title: "Data Visualization"
+title: "AirBnb NYC"
 author: "Aniket Singh"
 date: "2/1/2021"
 output:
-  md_document:
-    variant: gfm
   html_document:
     df_print: paged
+  md_document:
+    variant: gfm
+  pdf_document: default
 ---
+
+
 
 ```{r Loading the packages}
 library(tidyverse)
@@ -124,3 +127,9 @@ y = price)) + geom_violin(fill = "cornflowerblue") + geom_boxplot(width = .01,
 fill = "orange", outlier.color = "orange", outlier.size = 2) +
 labs(title = "Price distribution by neighbourhood group")
 ```
+
+
+
+
+
+
