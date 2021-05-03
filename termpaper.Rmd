@@ -40,21 +40,14 @@ Because of the dramatic growth of Airbnb, price prediction becomes one of the es
 \
   Too many levels of a categorical variable are one of the most frequently occurring problems in predictive modeling. As for our dataset, multiple level of categorical variables. Three columns categories of the categorical variables  are neighborhood_group, neighborhood and room_type are. In case of neighborhood_group and room_type, they do not have multiple levels so it is possible to use dummy coding. But in case of neighborhood, we have 219 levels which makes dummy coding overly complex. The number of dummy variables for the neighborhood variable would be one less than the number of levels in neighborhood. It would lead to the problem of high dimensionality which will ultimately cause the over-fitting of the data. Thus, the model will not be able to generalize properly to a new dataset. Moreover, inclusion of categorical variables with too many inputs can lead to the problem of quasi-complete separation. The problem of quasi-complete separation occurs when a level of the categorical variable has a target response of either 0% or 100% and can cause the interpretation of the regression model. However, we did not include few variables such as neighborhood in our final model. 
 \
-\
+
 \begin{Large}
-2.3. Reducing redundancy: 
+2.3. Variable screening: 
 \end{Large}
 \
-#[this part is not done yet]
-  Datasets with too many input variables can cause different problems in development of predictive models. For instance, the probability of redundant variables in a dataset with more input variables is high. In high dimensional datasets, the association between the inputs makes it difficult to identify the best predictor variables. So, we can reduce the redundancy by clustering numeric variables in the training dataset. Finally, we can use criteria such as 1-Rsquare statistic, relationship between predictor variable and the target, and subject matter knowledge to choose a variable from each cluster. We can use technique such as K-means clustering or KNN to create clusters for training dataset.
-#Please rember to do this before creating final model.
-\
-\begin{Large}
-2.4. Variable screening: 
-\end{Large}
-\
-  In predictive modeling, carefully selected features can improve the accuary of the model while adding too many or too less variables can lead to overfitting or underfitting. The model can't generalize well and work on unseen dataset if the model is not "just right" or close to "just right". There are multiple methods for variable screening. We can perform many statistical tests such as AIC, BIC, F-test, Cross Validation to check what set of variables perform well on the model. There are many methods available such as Stepwise selection which uses either Forward or Backward selection method. But, we have a very small number of features, so we can perform Best Subset selection method. Best subset selection method can be computationally expensive but in our case, it is possible to perform best subset.  
-#best subset yet to be performed
+  In predictive modeling, carefully selected features can improve the accuary of the model while adding too many or too less variables can lead to overfitting or underfitting. The model can't generalize well and work on unseen dataset if the model is not "just right" or close to "just right". There are multiple methods for variable screening. We can perform many statistical tests such as AIC, BIC, F-test, Cross Validation to check what set of variables perform well on the model. There are many methods available such as Stepwise selection which uses either Forward or Backward selection method. But, we have a very small number of features, so we performed Best Subset selection method. Best subset selection method can be computationally expensive but in our case, it is possible to perform best subset.  
+![VariableScreening](~/AirBnbSeniorProject/images/variableBest.png)
+![VariableScreening](~/AirBnbSeniorProject/images/plotAIC.png)
 \
 
 \
@@ -62,14 +55,10 @@ Because of the dramatic growth of Airbnb, price prediction becomes one of the es
 3. Models Used: 
 \end{Large}
 \
-#I plan to introduce all the models that I would be using in the project. 
-\
-#After Introducing model, I would make sections for Model Analysis and Performance 
-\
 \begin{Large}
 Linear Regression 
 \end{Large}
-Linear regression is a technique used to model the relationships between observed variables. The idea behind simple linear regression is to "fit" the observations of two variables into a linear relationship between them. Graphically, the task is to draw the line that is "best-fitting" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other.
+  Linear regression is a technique used to model the relationships between observed variables. The idea behind simple linear regression is to "fit" the observations of two variables into a linear relationship between them. Graphically, the task is to draw the line that is "best-fitting" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other.
 ![LinearRegression](~/AirBnbSeniorProject/images/linear.png)
 
 \
@@ -77,7 +66,7 @@ Linear regression is a technique used to model the relationships between observe
 Ridge Regression 
 \end{Large}
 \
-Ridge Regression is a technique for analyzing multiple regression data that suffer from multicollinearity. When multicollinearity occurs, least squares estimates are unbiased, but their variances are large so they may be far from the true value. By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors.
+  Ridge Regression is a technique for analyzing multiple regression data that suffer from multicollinearity. When multicollinearity occurs, least squares estimates are unbiased, but their variances are large so they may be far from the true value. By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors.
 It is hoped that the net effect will be to give estimates that are more reliable.
 ![RidgeRegression](~/AirBnbSeniorProject/images/ridge.jpeg)
 
@@ -86,7 +75,7 @@ It is hoped that the net effect will be to give estimates that are more reliable
 Lasso Regression 
 \end{Large}
 \
-The “LASSO” stands for Least Absolute Shrinkage and Selection Operator. Lasso regression is a regularization technique. It is used over regression methods for a more accurate prediction. This model uses shrinkage. Shrinkage is where data values are shrunk towards a central point as the mean. The lasso procedure encourages simple, sparse models (i.e. models with fewer parameters). This particular type of regression is well-suited for models showing high levels of multicollinearity or when you want to automate certain parts of model selection, like variable selection/parameter elimination.
+  The “LASSO” stands for Least Absolute Shrinkage and Selection Operator. Lasso regression is a regularization technique. It is used over regression methods for a more accurate prediction. This model uses shrinkage. Shrinkage is where data values are shrunk towards a central point as the mean. The lasso procedure encourages simple, sparse models (i.e. models with fewer parameters). This particular type of regression is well-suited for models showing high levels of multicollinearity or when you want to automate certain parts of model selection, like variable selection/parameter elimination.
 ![LassoRegression](~/AirBnbSeniorProject/images/lasso.png)
 
 \
@@ -94,7 +83,54 @@ The “LASSO” stands for Least Absolute Shrinkage and Selection Operator. Lass
 Decision Tree Regression 
 \end{Large}
 \
-		
-Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. 
+  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. 
 \
 ![DecisionRegression](~/AirBnbSeniorProject/images/tree.png)
+\
+\begin{Large}
+Random Forest Regression 
+\end{Large}
+\
+A random forest is a meta estimator that fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree.
+![RandomRegression](~/AirBnbSeniorProject/images/random.png)
+\
+\begin{Large}
+3. Analysis/Result 
+\end{Large}
+\
+\begin{Large}
+3.1 The Linear Regression Model 
+\end{Large}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References: 
+Decision Tree Regression: https://www.saedsayad.com/decision_tree_reg.htm#:~:text=Decision%20tree%20builds%20regression%20or,decision%20tree%20is%20incrementally%20developed.&text=The%20topmost%20decision%20node%20in,best%20predictor%20called%20root%20node.
+
+Ridge Regression: 
+https://ncss-wpengine.netdna-ssl.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Ridge_Regression.pdf
+
+Lasso Regression: 
+https://www.mygreatlearning.com/blog/understanding-of-lasso-regression/
+
+Linear Regression: 
+https://brilliant.org/wiki/linear-regression/
+
+Random Forest: 
