@@ -1,5 +1,5 @@
 ---
-title: "AirBnB Price Prediction Term Paper"
+title: "AirBnB Price Prediction "
 author: "Aniket K Singh"
 date: "`r format(Sys.time(), '%B %e, %Y')`"
 fontsize: 12pt
@@ -10,9 +10,7 @@ output:
 header-includes: \usepackage{amsmath} \usepackage{color}
 ---
 
-\begin{Large}
-Airbnb Price Prediction
-\end{Large}
+
 \
 \begin{Large}
 1. Introduction
@@ -51,9 +49,13 @@ Because of the dramatic growth of Airbnb, price prediction becomes one of the es
 \
 
 \
+
 \begin{Large}
 3. Models Used: 
 \end{Large}
+\
+\
+\
 \
 \begin{Large}
 Linear Regression 
@@ -83,7 +85,7 @@ Lasso Regression
 Decision Tree Regression 
 \end{Large}
 \
-  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. 
+  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes.  \cite{decisionTree}
 \
 ![DecisionRegression](~/AirBnbSeniorProject/images/tree.png)
 \
@@ -95,12 +97,75 @@ A random forest is a meta estimator that fits a number of classifying decision t
 ![RandomRegression](~/AirBnbSeniorProject/images/random.png)
 \
 \begin{Large}
-3. Analysis/Result 
+3. Analysis
 \end{Large}
 \
 \begin{Large}
-3.1 The Linear Regression Model 
+3.1 Exploratory Data Analysis 
 \end{Large}
+\
+\textbf{Correlation Analysis}
+\
+A correlation coefficient is a way to put a value to the relationship. Correlation coefficients have a value of between -1 and 1. A “0” means there is no relationship between the variables at all, while -1 or 1 means that there is a perfect negative or positive correlation (negative or positive correlation here refers to the type of graph the relationship will produce).
+![CorrelationAnalysis](~/AirBnbSeniorProject/images/corr.png)
+\
+As, we can see from the Correlation Plot above, our features are correlated to each other. We can observe strong correlation between features. This can sometimes be an indicator for multicollinearity. 
+\
+\
+\textbf{Price Analysis}
+\
+Machine learning algorithms are sensitive to the range and distribution of attribute values. Data outliers can spoil and mislead the training process resulting in longer training times, less accurate models and ultimately poorer results. \
+In order to build a good model, it is important to have a dataset that doesn't have too many outliers. So we try to detect outliers in our prices. 
+\
+![Outlier](~/AirBnbSeniorProject/images/outPrice.png)
+\
+As we can notice from the plot above, we have many outliers in our price distribution. So, we drop all the outliers from our dataset. 
+\
+![price](~/AirBnbSeniorProject/images/Price.png)
+\
+\textbf{Neighbourhood Group vs Price Analysis}
+\
+Let's now look into the relationship between neighbourhood group and price. This would help us understand if the price variable is impacted by neighbourhood groups. 
+\
+![price](~/AirBnbSeniorProject/images/nhgPrice.png)
+\
+We can notice from the violin plot above, that Manhattan and Brooklyn are more expensive and distributed around the upper price ranges. Whereas Queens, Staten Island and Bronx is more distributed in the bottom price ranges. This indicates that the prices are being impacted by the loction of Airbnb.  
+\
+\textbf{Room Type vs Price Analysis}
+\
+Now we look into the relationship between room type and price. This would help us understand if the price variable is impacted by room type.  
+\
+![price](~/AirBnbSeniorProject/images/rmtype.png)
+\
+As we can notice from our violin plot above, that getting an entire apartment/home is significantly more expensive whereas shared room is much cheaper. While Private rooms are bit more expensive than shared rooms but the major price ditribution is between shared rooms and entire apartment. 
+\
+\
+\
+\begin{Large}
+3.2 Model Optimization and Tuning Techniques 
+\end{Large}
+\
+In our models, we have used multiple optimization and tuning techniques for Random Forest Regression. Before we analyze our models and results, it is important to understand these techniques. Here are the techniques that we have used to tune models using Python. 
+\
+\textbf{Cross Validation}
+\
+Cross validation is a model evaluation method that is better than residuals. The problem with residual evaluations is that they do not give an indication of how well the learner will do when it is asked to make new predictions for data it has not already seen. One way to overcome this problem is to not use the entire data set when training a learner. Some of the data is removed before training begins. Then when training is done, the data that was removed can be used to test the performance of the learned model on "new" data. This is the basic idea for a whole class of model evaluation methods called cross validation.
+\
+There are many \textbf{Cross Validation} techniques, but we have used \textbf{ K-fold Cross Validation}. \
+
+\
+
+\textbf{ K-fold Cross Validation} is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. The advantage of this method is that it matters less how the data gets divided. Every data point gets to be in a test set exactly once, and gets to be in a training set k-1 times. The variance of the resulting estimate is reduced as k is increased. The disadvantage of this method is that the training algorithm has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. A variant of this method is to randomly divide the data into a test and training set k different times. The advantage of doing this is that you can independently choose how large each test set is and how many trials you average over.
+\
+![price](~/AirBnbSeniorProject/images/cross.png)
+\
+
+\
+\textbf{Bootstrap}
+\
+Bootstrap aggregating, also called bagging (from bootstrap aggregating), is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the model averaging approach.
+\
+![bootsrap](~/AirBnbSeniorProject/images/bootstrap.png)
 
 
 
@@ -116,13 +181,45 @@ A random forest is a meta estimator that fits a number of classifying decision t
 
 
 
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 
 
 
 
 
-References: 
-Decision Tree Regression: https://www.saedsayad.com/decision_tree_reg.htm#:~:text=Decision%20tree%20builds%20regression%20or,decision%20tree%20is%20incrementally%20developed.&text=The%20topmost%20decision%20node%20in,best%20predictor%20called%20root%20node.
+Decision Tree Regression:
+https://www.saedsayad.com/decision_tree_reg.htm#:~:text=Decision%20tree%20builds%20regression%20or,decision%20tree%20is%20incrementally%20developed.&text=The%20topmost%20decision%20node%20in,best%20predictor%20called%20root%20node.
+
+
 
 Ridge Regression: 
 https://ncss-wpengine.netdna-ssl.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Ridge_Regression.pdf
@@ -133,4 +230,9 @@ https://www.mygreatlearning.com/blog/understanding-of-lasso-regression/
 Linear Regression: 
 https://brilliant.org/wiki/linear-regression/
 
+Outlier 
+https://datascience.foundation/sciencewhitepaper/knowing-all-about-outliers-in-machine-learning#:~:text=Machine%20learning%20algorithms%20are%20sensitive,models%20and%20ultimately%20poorer%20results.
 Random Forest: 
+
+Cross validation: 
+https://www.cs.cmu.edu/~schneide/tut5/node42.html
