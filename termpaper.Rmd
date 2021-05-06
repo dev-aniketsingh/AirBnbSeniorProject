@@ -3,6 +3,9 @@ title: "AirBnB Price Prediction "
 author: "Aniket K Singh"
 date: "`r format(Sys.time(), '%B %e, %Y')`"
 fontsize: 12pt
+bibliography: ["one.bib"]
+csl: apa.csl
+link-citations: true
 output:
   pdf_document: default
   html_document:
@@ -20,6 +23,7 @@ header-includes: \usepackage{amsmath} \usepackage{color}
 Before Airbnb, most consumers had to rely on hotels. As hotels aren't as widely available as Airbnb with their exceptional business model, they soon became the best vacation rental marketplace. \
 Because of the dramatic growth of Airbnb, price prediction becomes one of the essential elements for their platform. As hosts typically determine the price of the Airbnb. Both the host and Airbnb need to provide a fair price to the consumer, as it is an essential element of their model. Determining the price is crucial for the new and existing host/Airbnb because the price cannot be too high that they lose popularity or not get any guest. As for customers, they have options to check and compare prices depending on their needs. 
 \
+We plan to build a machine learning model using some Machine Learning algorithms like Linear Regression, Ridge Regression, Decision Tree Regression, and Random Forest Regression. Also, we would be using Machine learning technqiques to tune our model and try to acheive a good predictive accuracy. 
 \begin{Large}
 2.	Data Preparation
 \end{Large}
@@ -60,7 +64,7 @@ Because of the dramatic growth of Airbnb, price prediction becomes one of the es
 \begin{Large}
 Linear Regression 
 \end{Large}
-  Linear regression is a technique used to model the relationships between observed variables. The idea behind simple linear regression is to "fit" the observations of two variables into a linear relationship between them. Graphically, the task is to draw the line that is "best-fitting" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other.
+  Linear regression is a technique used to model the relationships between observed variables. The idea behind simple linear regression is to "fit" the observations of two variables into a linear relationship between them. Graphically, the task is to draw the line that is "best-fitting" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other. [@LinearRegression]
 ![LinearRegression](~/AirBnbSeniorProject/images/linear.png)
 
 \
@@ -69,23 +73,14 @@ Ridge Regression
 \end{Large}
 \
   Ridge Regression is a technique for analyzing multiple regression data that suffer from multicollinearity. When multicollinearity occurs, least squares estimates are unbiased, but their variances are large so they may be far from the true value. By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors.
-It is hoped that the net effect will be to give estimates that are more reliable.
+It is hoped that the net effect will be to give estimates that are more reliable. [@RidgeRregression]
 ![RidgeRegression](~/AirBnbSeniorProject/images/ridge.jpeg)
-
-\
-\begin{Large}
-Lasso Regression 
-\end{Large}
-\
-  The “LASSO” stands for Least Absolute Shrinkage and Selection Operator. Lasso regression is a regularization technique. It is used over regression methods for a more accurate prediction. This model uses shrinkage. Shrinkage is where data values are shrunk towards a central point as the mean. The lasso procedure encourages simple, sparse models (i.e. models with fewer parameters). This particular type of regression is well-suited for models showing high levels of multicollinearity or when you want to automate certain parts of model selection, like variable selection/parameter elimination.
-![LassoRegression](~/AirBnbSeniorProject/images/lasso.png)
-
 \
 \begin{Large}
 Decision Tree Regression 
 \end{Large}
 \
-  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes.  \cite{decisionTree}
+  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes.  [@DecisionTreee]
 \
 ![DecisionRegression](~/AirBnbSeniorProject/images/tree.png)
 \
@@ -93,7 +88,7 @@ Decision Tree Regression
 Random Forest Regression 
 \end{Large}
 \
-A random forest is a meta estimator that fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree.
+A random forest is a meta estimator that fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree. [@RandomForestRegresso]
 ![RandomRegression](~/AirBnbSeniorProject/images/random.png)
 \
 \begin{Large}
@@ -106,7 +101,7 @@ A random forest is a meta estimator that fits a number of classifying decision t
 \
 \textbf{Correlation Analysis}
 \
-A correlation coefficient is a way to put a value to the relationship. Correlation coefficients have a value of between -1 and 1. A “0” means there is no relationship between the variables at all, while -1 or 1 means that there is a perfect negative or positive correlation (negative or positive correlation here refers to the type of graph the relationship will produce).
+A correlation coefficient is a way to put a value to the relationship. Correlation coefficients have a value of between -1 and 1. A “0” means there is no relationship between the variables at all, while -1 or 1 means that there is a perfect negative or positive correlation (negative or positive correlation here refers to the type of graph the relationship will produce). [@Correlation]
 ![CorrelationAnalysis](~/AirBnbSeniorProject/images/corr.png)
 \
 As, we can see from the Correlation Plot above, our features are correlated to each other. We can observe strong correlation between features. This can sometimes be an indicator for multicollinearity. 
@@ -114,7 +109,8 @@ As, we can see from the Correlation Plot above, our features are correlated to e
 \
 \textbf{Price Analysis}
 \
-Machine learning algorithms are sensitive to the range and distribution of attribute values. Data outliers can spoil and mislead the training process resulting in longer training times, less accurate models and ultimately poorer results. \
+Machine learning algorithms are sensitive to the range and distribution of attribute values. Data outliers can spoil and mislead the training process resulting in longer training times, less accurate models and ultimately poorer results. [@OutlierDetection]
+\
 In order to build a good model, it is important to have a dataset that doesn't have too many outliers. So we try to detect outliers in our prices. 
 \
 ![Outlier](~/AirBnbSeniorProject/images/outPrice.png)
@@ -147,15 +143,15 @@ As we can notice from our violin plot above, that getting an entire apartment/ho
 \
 In our models, we have used multiple optimization and tuning techniques for Random Forest Regression. Before we analyze our models and results, it is important to understand these techniques. Here are the techniques that we have used to tune models using Python. 
 \
+\
 \textbf{Cross Validation}
 \
-Cross validation is a model evaluation method that is better than residuals. The problem with residual evaluations is that they do not give an indication of how well the learner will do when it is asked to make new predictions for data it has not already seen. One way to overcome this problem is to not use the entire data set when training a learner. Some of the data is removed before training begins. Then when training is done, the data that was removed can be used to test the performance of the learned model on "new" data. This is the basic idea for a whole class of model evaluation methods called cross validation.
+Cross validation is a model evaluation method that is better than residuals. The problem with residual evaluations is that they do not give an indication of how well the learner will do when it is asked to make new predictions for data it has not already seen. One way to overcome this problem is to not use the entire data set when training a learner. Some of the data is removed before training begins. Then when training is done, the data that was removed can be used to test the performance of the learned model on "new" data. This is the basic idea for a whole class of model evaluation methods called cross validation. [@CrossValidation]
 \
-There are many \textbf{Cross Validation} techniques, but we have used \textbf{ K-fold Cross Validation}. \
-
+There are many \textbf{Cross Validation} techniques, but we have used \textbf{K-fold Cross Validation}. 
 \
-
-\textbf{ K-fold Cross Validation} is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. The advantage of this method is that it matters less how the data gets divided. Every data point gets to be in a test set exactly once, and gets to be in a training set k-1 times. The variance of the resulting estimate is reduced as k is increased. The disadvantage of this method is that the training algorithm has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. A variant of this method is to randomly divide the data into a test and training set k different times. The advantage of doing this is that you can independently choose how large each test set is and how many trials you average over.
+\
+\textbf{K-fold Cross Validation} is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. The advantage of this method is that it matters less how the data gets divided. Every data point gets to be in a test set exactly once, and gets to be in a training set k-1 times. The variance of the resulting estimate is reduced as k is increased. The disadvantage of this method is that the training algorithm has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. A variant of this method is to randomly divide the data into a test and training set k different times. The advantage of doing this is that you can independently choose how large each test set is and how many trials you average over. [@CrossValidation]
 \
 ![price](~/AirBnbSeniorProject/images/cross.png)
 \
@@ -163,76 +159,41 @@ There are many \textbf{Cross Validation} techniques, but we have used \textbf{ K
 \
 \textbf{Bootstrap}
 \
-Bootstrap aggregating, also called bagging (from bootstrap aggregating), is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the model averaging approach.
+Bootstrap aggregating, also called bagging (from bootstrap aggregating), is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the model averaging approach. [@Bootstrap]
 \
 ![bootsrap](~/AirBnbSeniorProject/images/bootstrap.png)
+\
+\
+\begin{Large}
+3.3 Model Comparison and Results  
+\end{Large}
+\
+As I used 4 different models Machine Learning models: Linear Regression, Ridge Regression, Decision Tree and Random Forest Regression. I also tuned Random Forest Regressor. As my significant predictors were mostly categorical variables including location and room type, the results are not very good as for predictive accuracy. Also predictive accuracy isn't a great measure to analyze a model but it does provide some insight of the model. After training my model with 70% of dataset, and tested the model with the remaining 30%. I was able to acheive 55% model accuracy with tuned random forest. The dataset did not include features that are important for an Airbnb price prediction. In machine learning, it is important that the features used in dataset are significant predictors. When we book an Airbnb, it is always a case that we look at number of rooms, bathroom and other servies included. Also, people generally case about service fees, cancellation policies. But since these features were not avaiable in our dataset, our model didn't perform well. In the figure below, we can see RMSE understand the performance of the model. \
+![rmse](~/AirBnbSeniorProject/images/rmse.png)
+\
+
+Root Mean Square Error (RMSE) is the standard deviation of the residuals (prediction errors). Residuals are a measure of how far from the regression line data points are; RMSE is a measure of how spread out these residuals are. In other words, it tells you how concentrated the data is around the line of best fit. [@rootmean]
+\
+Here is another plot that visualizes some datapoints in form of historgram to see how the Tuned-Random Forest Model performed. 
+\
+![tuned](~/AirBnbSeniorProject/images/tuned.png)
+\
+\
+\begin{Large}
+4. Conclusion 
+\end{Large}
+\
+We worked on Price Prediction problem and compared various Machine Learning models in this project. We did not achieve a great predicting accuracy because of the lack of features in dataset. While the model did not perform well, we were able to still compare multiple models and achieve some predictive accuracy and also used frameworks provided by python such as sckit-learn-RandomizedSearchCV.  
+\
+As we now know more about an Airbnb, we can choose to do future work with a dataset with better features and build a model that would have better predictive accuracy. This can help hosts estimate their Airbnb prices. As we mentioned before, a bad price can hurt the business of the host because people might not choose to stay if it is too expensive or a cheaper price might make host lose money in the long run. 
+\
+
+
+\clearpage
+\begin{Large}
+\centerline{References}
+\end{Large}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
-
-
-
-
-Decision Tree Regression:
-https://www.saedsayad.com/decision_tree_reg.htm#:~:text=Decision%20tree%20builds%20regression%20or,decision%20tree%20is%20incrementally%20developed.&text=The%20topmost%20decision%20node%20in,best%20predictor%20called%20root%20node.
-
-
-
-Ridge Regression: 
-https://ncss-wpengine.netdna-ssl.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Ridge_Regression.pdf
-
-Lasso Regression: 
-https://www.mygreatlearning.com/blog/understanding-of-lasso-regression/
-
-Linear Regression: 
-https://brilliant.org/wiki/linear-regression/
-
-Outlier 
-https://datascience.foundation/sciencewhitepaper/knowing-all-about-outliers-in-machine-learning#:~:text=Machine%20learning%20algorithms%20are%20sensitive,models%20and%20ultimately%20poorer%20results.
-Random Forest: 
-
-Cross validation: 
-https://www.cs.cmu.edu/~schneide/tut5/node42.html
