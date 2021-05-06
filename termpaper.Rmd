@@ -10,189 +10,205 @@ output:
   pdf_document: default
   html_document:
     df_print: paged
-header-includes: \usepackage{amsmath} \usepackage{color}
+header-includes: \usepackage{amsmath} \usepackage{color} \usepackage[english]{babel} \usepackage{graphicx} \usepackage{filecontents} \usepackage{natbib} \usepackage{url} \usepackage[nottoc]{tocbibind}
 ---
 
 
-\
-\begin{Large}
-1. Introduction
-\end{Large}
-\
+\tableofcontents
+
+
+\newpage
+\maketitle
+
+\section{Introduction}
+
   Airbnb has become one of the essential elements of trips and vacation plans for over 150 million people. Since 2008, guests and hosts have used Airbnb for a unique and personalized experience of traveling with a wide range of travel possibilities. 
 Before Airbnb, most consumers had to rely on hotels. As hotels aren't as widely available as Airbnb with their exceptional business model, they soon became the best vacation rental marketplace. \
-Because of the dramatic growth of Airbnb, price prediction becomes one of the essential elements for their platform. As hosts typically determine the price of the Airbnb. Both the host and Airbnb need to provide a fair price to the consumer, as it is an essential element of their model. Determining the price is crucial for the new and existing host/Airbnb because the price cannot be too high that they lose popularity or not get any guest. As for customers, they have options to check and compare prices depending on their needs. 
+Because of the dramatic growth of Airbnb, price prediction becomes one of the essential elements for their platform. As hosts typically determine the price of the Airbnb; both the host and Airbnb need to provide a fair price to the consumer, as it is an essential element of their model. Determining the price is crucial for the new and existing host/Airbnb because the price cannot be too high that they lose popularity or not get any guest. As for customers, they have options to check and compare prices depending on their needs. 
 \
-We plan to build a machine learning model using some Machine Learning algorithms like Linear Regression, Ridge Regression, Decision Tree Regression, and Random Forest Regression. Also, we would be using Machine learning technqiques to tune our model and try to acheive a good predictive accuracy. 
-\begin{Large}
-2.	Data Preparation
-\end{Large}
-\
-  The dataset used in the project has been accessed from Kaggle's database. It is a public dataset of Airbnb that is accessible publicly on their original dataset website. This dataset describes the listing activity and metrics in NYC, NY for the year 2019. This data file includes all the needed information to find out more about hosts, geographical availability, necessary metrics to make predictions and draw conclusions. The dataset is in Comma-Separated Values(.csv) file format. After importing the datset, we performed some analysis on the dataset. The dataset contained 48894 rows and 16 columns. 
-\
-\begin{Large}
-2.1. Handling Missing Values
-\end{Large}
-\
-  After importaing the dataset. we noticed that column "last_review", "reviews_per_month" had 10052 missing values. Also, few columns had some missing values that were either imputed or dropped. This dataset did not contain many missing values or the rows that contained majority of missing values wasn't used to train or build the model. 
-\
-\begin{Large}
-2.2. Dealing with categorical inputs:
-\end{Large}
-\
-  Too many levels of a categorical variable are one of the most frequently occurring problems in predictive modeling. As for our dataset, multiple level of categorical variables. Three columns categories of the categorical variables  are neighborhood_group, neighborhood and room_type are. In case of neighborhood_group and room_type, they do not have multiple levels so it is possible to use dummy coding. But in case of neighborhood, we have 219 levels which makes dummy coding overly complex. The number of dummy variables for the neighborhood variable would be one less than the number of levels in neighborhood. It would lead to the problem of high dimensionality which will ultimately cause the over-fitting of the data. Thus, the model will not be able to generalize properly to a new dataset. Moreover, inclusion of categorical variables with too many inputs can lead to the problem of quasi-complete separation. The problem of quasi-complete separation occurs when a level of the categorical variable has a target response of either 0% or 100% and can cause the interpretation of the regression model. However, we did not include few variables such as neighborhood in our final model. 
+We plan to build a machine learning model using some Machine Learning algorithms like Linear Regression, Ridge Regression, Decision Tree Regression, and Random Forest Regression. Also, we would be using Machine learning techniques to tune our model and try to acheive a good predictive accuracy. 
+\section{Data Preparation}
+  The dataset used in the project has been accessed from Kaggle's database\cite{Kaggle}. It is a public dataset of Airbnb that is accessible publicly on their original dataset website. This dataset describes the listing activity and metrics in NYC, NY for the year 2019. This data file includes all the needed information to find out more about hosts, geographical availability, necessary metrics to make predictions and draw conclusions. The dataset is in Comma-Separated Values(.csv) file format. After importing the datset, we performed some analysis on the dataset. The dataset contained 48894 rows and 16 columns. 
+\subsection{Handling Missing Values}
+
+  After importing the dataset. we noticed that column "last_review", "reviews_per_month" had 10052 missing values. Also, few columns had some missing values that were either imputed or dropped. This dataset did not contain many missing values or the rows that contained majority of missing values were not used to train or build the model. 
+\newpage
+\subsection{Dealing with categorical inputs}
+  Too many levels of a categorical variable are one of the most frequently occurring problems in predictive modeling. As for our dataset, we have three columns categories of the categorical variables they are: neighborhood_group, neighborhood and room_type are. In case of neighborhood_group and room_type, they do not have multiple levels so it is possible to use dummy coding. But in case of neighborhood, we have 219 levels which makes dummy coding overly complex. The number of dummy variables for the neighborhood variable would be one less than the number of levels in neighborhood. Since we have 219 levels in neighborhood variable it would lead to the problem of high dimensionality which will ultimately may cause over-fitting of the data. Thus, the model will not be able to generalize properly to a new dataset. Moreover, inclusion of categorical variables with too many inputs can lead to the problem of quasi-complete separation. The problem of quasi-complete separation occurs when a level of the categorical variable has a target response of either 0% or 100% and can cause the interpretation of the regression model. However, we did not include neighborhood in our final model. 
 \
 
-\begin{Large}
-2.3. Variable screening: 
-\end{Large}
-\
-  In predictive modeling, carefully selected features can improve the accuary of the model while adding too many or too less variables can lead to overfitting or underfitting. The model can't generalize well and work on unseen dataset if the model is not "just right" or close to "just right". There are multiple methods for variable screening. We can perform many statistical tests such as AIC, BIC, F-test, Cross Validation to check what set of variables perform well on the model. There are many methods available such as Stepwise selection which uses either Forward or Backward selection method. But, we have a very small number of features, so we performed Best Subset selection method. Best subset selection method can be computationally expensive but in our case, it is possible to perform best subset.  
-![VariableScreening](~/AirBnbSeniorProject/images/variableBest.png)
-![VariableScreening](~/AirBnbSeniorProject/images/plotAIC.png)
-\
+\subsection{Variable screening}
 
-\
+  In predictive modeling, carefully selected features can improve the accuary of the model while adding too many or too few variables can lead to overfitting or underfitting. The model can't generalize well and work on unseen dataset if the model is not "just right" or close to "just right". There are multiple methods for variable screening. We can perform many statistical tests such as AIC, BIC, F-test, Cross Validation to check what set of variables perform well on the model. There are many methods available such as Stepwise selection which uses either Forward or Backward selection method. But, we have a very small number of features, so we performed Best Subset selection method. Best subset selection method can be computationally expensive but in our case, it is possible to perform best subset.  
+\begin{figure}
+  \centering
+    \includegraphics[width=0.8\textwidth]{~/AirBnbSeniorProject/images/variableBest.png}
+    \caption{Best Subset Regression Result}
+    \includegraphics[width=0.8\textwidth]{~/AirBnbSeniorProject/images/plotAIC.png}
+    \caption{Best Subset Regression: Choosing number of predictors}
+\end{figure}
 
-\begin{Large}
-3. Models Used: 
-\end{Large}
-\
-\
-\
-\
-\begin{Large}
-Linear Regression 
-\end{Large}
-  Linear regression is a technique used to model the relationships between observed variables. The idea behind simple linear regression is to "fit" the observations of two variables into a linear relationship between them. Graphically, the task is to draw the line that is "best-fitting" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other. [@LinearRegression]
-![LinearRegression](~/AirBnbSeniorProject/images/linear.png)
+\newpage
+\section{Models Used}
 
-\
-\begin{Large}
-Ridge Regression 
-\end{Large}
-\
+
+\subsection{Linear Regression }
+
+  Linear regression is a technique used to model the relationships between observed variables. The idea behind simple linear regression is to "fit" the observations of two variables into a linear relationship between them. Graphically, the task is to draw the line that is "best-fitting" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other. \cite{LinearRegression}
+\begin{figure}
+  \centering
+    \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/linear.png}
+    \caption{Simple Linear Regression from \cite{WikipediaEN:LinearRegression.svg}}
+\end{figure}
+
+\subsection{Ridge Regression}
+
   Ridge Regression is a technique for analyzing multiple regression data that suffer from multicollinearity. When multicollinearity occurs, least squares estimates are unbiased, but their variances are large so they may be far from the true value. By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors.
-It is hoped that the net effect will be to give estimates that are more reliable. [@RidgeRregression]
-![RidgeRegression](~/AirBnbSeniorProject/images/ridge.jpeg)
+It is hoped that the net effect will be to give estimates that are more reliable. \cite{RidgeRregression}
+\newpage
+\begin{figure}
+  \centering
+    \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/ridge.jpeg}
+    \caption{Ridge Regression figure from \cite{RIDGEFIGURE}}
+\end{figure}
+
+\subsection{Decision Tree Regression }
+
+  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes.\cite{DecisionTreee}
 \
-\begin{Large}
-Decision Tree Regression 
-\end{Large}
-\
-  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes.  [@DecisionTreee]
-\
-![DecisionRegression](~/AirBnbSeniorProject/images/tree.png)
-\
-\begin{Large}
-Random Forest Regression 
-\end{Large}
-\
-A random forest is a meta estimator that fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree. [@RandomForestRegresso]
-![RandomRegression](~/AirBnbSeniorProject/images/random.png)
-\
-\begin{Large}
-3. Analysis
-\end{Large}
-\
-\begin{Large}
-3.1 Exploratory Data Analysis 
-\end{Large}
-\
-\textbf{Correlation Analysis}
-\
-A correlation coefficient is a way to put a value to the relationship. Correlation coefficients have a value of between -1 and 1. A “0” means there is no relationship between the variables at all, while -1 or 1 means that there is a perfect negative or positive correlation (negative or positive correlation here refers to the type of graph the relationship will produce). [@Correlation]
-![CorrelationAnalysis](~/AirBnbSeniorProject/images/corr.png)
-\
+\begin{figure}
+  \centering
+    \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/tree.png}
+    \caption{Decision Tree Regression from \cite{DecisionTreee}}
+\end{figure}
+\newpage
+
+\subsection{Random Forest Regression }
+
+A random forest is a meta estimator that fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree. \cite{RandomForestRegresso}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=0.9\textwidth]{~/AirBnbSeniorProject/images/random.png}
+    \caption{Random Forest Regression figure from \cite{randomForestFigure}}
+\end{figure}
+
+\section{Analysis}
+
+\subsection{Exploratory Data Analysis }
+
+\subsubsection{Correlation Analysis}
+
+A \textbf{correlation coefficient} is a way to put a value to the relationship. Correlation coefficients have a value of between -1 and 1. A “0” means there is no linear relationship between the variables at all, while -1 or 1 means that there is a perfect negative or positive correlation (negative or positive correlation here refers to the type of graph the relationship will produce). \cite{Correlation}
+\begin{figure}
+  \centering
+    \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/corr.png}
+    \caption{Results of Pearson Correlation Test on Dataset}
+\end{figure}
+
 As, we can see from the Correlation Plot above, our features are correlated to each other. We can observe strong correlation between features. This can sometimes be an indicator for multicollinearity. 
-\
-\
-\textbf{Price Analysis}
-\
-Machine learning algorithms are sensitive to the range and distribution of attribute values. Data outliers can spoil and mislead the training process resulting in longer training times, less accurate models and ultimately poorer results. [@OutlierDetection]
+
+\subsubsection{Price Analysis}
+
+Machine learning algorithms are sensitive to the range and distribution of attribute values. Data outliers can spoil and mislead the training process resulting in longer training times, less accurate models and ultimately poorer results. \cite{OutlierDetection}
 \
 In order to build a good model, it is important to have a dataset that doesn't have too many outliers. So we try to detect outliers in our prices. 
-\
-![Outlier](~/AirBnbSeniorProject/images/outPrice.png)
-\
+\begin{figure}
+  \centering
+    \includegraphics[width=0.4\textwidth]{~/AirBnbSeniorProject/images/outPrice.png}
+    \caption{Density plot of price with outliers}
+\end{figure}
 As we can notice from the plot above, we have many outliers in our price distribution. So, we drop all the outliers from our dataset. 
-\
-![price](~/AirBnbSeniorProject/images/Price.png)
-\
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{~/AirBnbSeniorProject/images/Price.png}
+    \caption{Density plot of price after removing outliers}
+\end{figure}
+\newpage
 \textbf{Neighbourhood Group vs Price Analysis}
 \
 Let's now look into the relationship between neighbourhood group and price. This would help us understand if the price variable is impacted by neighbourhood groups. 
-\
-![price](~/AirBnbSeniorProject/images/nhgPrice.png)
-\
-We can notice from the violin plot above, that Manhattan and Brooklyn are more expensive and distributed around the upper price ranges. Whereas Queens, Staten Island and Bronx is more distributed in the bottom price ranges. This indicates that the prices are being impacted by the loction of Airbnb.  
-\
+\begin{figure}
+  \centering
+    \includegraphics[width=0.6\textwidth]{~/AirBnbSeniorProject/images/nhgPrice.png}
+    \caption{Violin Plot for Neighbourhood Distribution vs Price}
+\end{figure}
+
+We can notice from the violin plot above, Manhattan and Brooklyn are more expensive and distributed around the upper price ranges. Whereas Queens, Staten Island and Bronx is more distributed in the bottom price ranges. This indicates that the prices are being impacted by the loction of Airbnb.  \
+
+\newpage
 \textbf{Room Type vs Price Analysis}
 \
 Now we look into the relationship between room type and price. This would help us understand if the price variable is impacted by room type.  
-\
-![price](~/AirBnbSeniorProject/images/rmtype.png)
-\
-As we can notice from our violin plot above, that getting an entire apartment/home is significantly more expensive whereas shared room is much cheaper. While Private rooms are bit more expensive than shared rooms but the major price ditribution is between shared rooms and entire apartment. 
-\
-\
-\
-\begin{Large}
-3.2 Model Optimization and Tuning Techniques 
-\end{Large}
-\
+\begin{figure}
+  \centering
+    \includegraphics[width=0.6\textwidth]{~/AirBnbSeniorProject/images/rmtype.png}
+    \caption{Violin Plot for room type vs price}
+\end{figure}
+As we can notice from our violin plot above, that getting an entire apartment is significantly more expensive whereas shared room is much cheaper. While Private rooms are bit more expensive than shared rooms but the major price ditribution is between shared rooms and entire apartment. 
+
+\subsection{Model Optimization and Tuning Techniques}
 In our models, we have used multiple optimization and tuning techniques for Random Forest Regression. Before we analyze our models and results, it is important to understand these techniques. Here are the techniques that we have used to tune models using Python. 
-\
-\
-\textbf{Cross Validation}
-\
-Cross validation is a model evaluation method that is better than residuals. The problem with residual evaluations is that they do not give an indication of how well the learner will do when it is asked to make new predictions for data it has not already seen. One way to overcome this problem is to not use the entire data set when training a learner. Some of the data is removed before training begins. Then when training is done, the data that was removed can be used to test the performance of the learned model on "new" data. This is the basic idea for a whole class of model evaluation methods called cross validation. [@CrossValidation]
+\subsubsection{Cross Validation}
+Cross validation is a model evaluation method that is better than residuals. The problem with residual evaluations is that they do not give an indication of how well the learner will do when it is asked to make new predictions for data it has not already seen. One way to overcome this problem is to not use the entire data set when training a learner. Some of the data is removed before training begins. Then when training is done, the data that was removed can be used to test the performance of the learned model on "new" data. This is the basic idea for a whole class of model evaluation methods called cross validation. \cite{CrossValidation}
 \
 There are many \textbf{Cross Validation} techniques, but we have used \textbf{K-fold Cross Validation}. 
 \
 \
-\textbf{K-fold Cross Validation} is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. The advantage of this method is that it matters less how the data gets divided. Every data point gets to be in a test set exactly once, and gets to be in a training set k-1 times. The variance of the resulting estimate is reduced as k is increased. The disadvantage of this method is that the training algorithm has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. A variant of this method is to randomly divide the data into a test and training set k different times. The advantage of doing this is that you can independently choose how large each test set is and how many trials you average over. [@CrossValidation]
+\textbf{K-fold Cross Validation} is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. The advantage of this method is that it matters less how the data gets divided. Every data point gets to be in a test set exactly once, and gets to be in a training set k-1 times. The variance of the resulting estimate is reduced as k is increased. The disadvantage of this method is that the training algorithm has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. A variant of this method is to randomly divide the data into a test and training set k different times. The advantage of doing this is that you can independently choose how large each test set is and how many trials you average over. \cite{CrossValidation}
 \
-![price](~/AirBnbSeniorProject/images/cross.png)
+\begin{figure}
+  \centering
+    \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/cross.png}
+    \caption{K-Fold Cross Validation Visualized from \cite{kfold}}
+\end{figure}
+\newpage
+\subsubsection{Bootstrapping}
 \
+Bootstrap aggregating, also called bagging (from bootstrap aggregating), is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the model averaging approach. \cite{Bootstrap}
 
-\
-\textbf{Bootstrap}
-\
-Bootstrap aggregating, also called bagging (from bootstrap aggregating), is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the model averaging approach. [@Bootstrap]
-\
-![bootsrap](~/AirBnbSeniorProject/images/bootstrap.png)
-\
-\
-\begin{Large}
-3.3 Model Comparison and Results  
-\end{Large}
-\
-As I used 4 different models Machine Learning models: Linear Regression, Ridge Regression, Decision Tree and Random Forest Regression. I also tuned Random Forest Regressor. As my significant predictors were mostly categorical variables including location and room type, the results are not very good as for predictive accuracy. Also predictive accuracy isn't a great measure to analyze a model but it does provide some insight of the model. After training my model with 70% of dataset, and tested the model with the remaining 30%. I was able to acheive 55% model accuracy with tuned random forest. The dataset did not include features that are important for an Airbnb price prediction. In machine learning, it is important that the features used in dataset are significant predictors. When we book an Airbnb, it is always a case that we look at number of rooms, bathroom and other servies included. Also, people generally case about service fees, cancellation policies. But since these features were not avaiable in our dataset, our model didn't perform well. In the figure below, we can see RMSE understand the performance of the model. \
-![rmse](~/AirBnbSeniorProject/images/rmse.png)
-\
+\begin{figure}
+  \centering
+    \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/bootstrap.png}
+    \caption{Bootstrap Visualized from \cite{bootstrapFigure}}
+\end{figure}
 
-Root Mean Square Error (RMSE) is the standard deviation of the residuals (prediction errors). Residuals are a measure of how far from the regression line data points are; RMSE is a measure of how spread out these residuals are. In other words, it tells you how concentrated the data is around the line of best fit. [@rootmean]
+\subsection{Model Comparison and Results}
+
+I used four different Machine Learning models: Linear Regression, Ridge Regression, Decision Tree, and Random Forest Regression. And I also tuned the Random Forest Regressor model using cross-validation and bootstrap. For this model, the significant predictors were categorical variables such as neighborhood group and room type, and numeric variables like minimum nights, and host information. The results are not particularly good for predictive accuracy. \
 \
-Here is another plot that visualizes some datapoints in form of historgram to see how the Tuned-Random Forest Model performed. 
+I trained my model with 70% of the dataset, and then I tested the model with the remaining 30%. I was able to achieve 55% model accuracy with a tuned random forest and the RMSE 36.40. \
 \
-![tuned](~/AirBnbSeniorProject/images/tuned.png)
+This dataset did not include features that are important for an Airbnb price prediction. In machine learning, the variables in the dataset must be significant predictors for the target variable. When we book an Airbnb, it is always a case that we look at the number of rooms, bathrooms, and other services included. Also, people generally case about service fees, cancellation policies. But since these features were not available in our dataset, our model didn't perform well. In the figure below, we can see RMSE understand the performance of the model. \
+
+\begin{figure}
+  \centering
+    \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/rmse.png}
+    \caption{RMSE of all the models}
+\end{figure}
+
+Root Mean Square Error (RMSE) is the standard deviation of the residuals (prediction errors). Residuals are a measure of how far from the regression line data points are; RMSE is a measure of how spread out these residuals are. In other words, it tells you how concentrated the data is around the line of best fit. \cite{rootmean}
 \
+Here is another plot that visualizes some datapoints in form of histogram to see how the Tuned-Random Forest Model performed. 
+\begin{figure}
+  \centering
+    \includegraphics[width=0.6\textwidth]{~/AirBnbSeniorProject/images/tuned.png}
+    \caption{Tuned Random Forest Prediction Visualized}
+\end{figure}
+
+\newpage
+\section{Conclusion}
+
+We worked on the Price Prediction problem and compared various Machine Learning models in this project. We did not achieve a significant predicting accuracy because of the lack of features in the dataset. While the model did not perform well, we were able to still compare multiple models and achieve a decent predictive accuracy. We also used frameworks provided by python: scikit-learn-RandomizedSearchCV to perform model tuning.  
 \
-\begin{Large}
-4. Conclusion 
-\end{Large}
-\
-We worked on Price Prediction problem and compared various Machine Learning models in this project. We did not achieve a great predicting accuracy because of the lack of features in dataset. While the model did not perform well, we were able to still compare multiple models and achieve some predictive accuracy and also used frameworks provided by python such as sckit-learn-RandomizedSearchCV.  
-\
-As we now know more about an Airbnb, we can choose to do future work with a dataset with better features and build a model that would have better predictive accuracy. This can help hosts estimate their Airbnb prices. As we mentioned before, a bad price can hurt the business of the host because people might not choose to stay if it is too expensive or a cheaper price might make host lose money in the long run. 
+As we now know more about Airbnb, we can choose to do future work with a dataset with better features and build a model that would have better predictive accuracy. A better model can help hosts estimate their Airbnb prices. As we mentioned before, an expensive price can hurt the business of the host because people might not choose to stay if it is too expensive for what they offer, and a cheaper price might make the host lose money overall. 
 \
 
 
 \clearpage
-\begin{Large}
-\centerline{References}
-\end{Large}
+
+\bibliographystyle{unsrt}
+\bibliography{one}
 
 
 
