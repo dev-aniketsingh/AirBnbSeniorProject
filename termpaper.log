@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.4)  6 MAY 2021 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.4)  6 MAY 2021 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -390,24 +390,24 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 ) (./termpaper.aux)
 \openout1 = `termpaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-
 base.sty
@@ -427,7 +427,7 @@ ys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 71.
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -439,9 +439,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count282
 )
-LaTeX Info: Redefining \ref on input line 72.
-LaTeX Info: Redefining \pageref on input line 72.
-LaTeX Info: Redefining \nameref on input line 72.
+LaTeX Info: Redefining \ref on input line 71.
+LaTeX Info: Redefining \pageref on input line 71.
+LaTeX Info: Redefining \nameref on input line 71.
 (./termpaper.out) (./termpaper.out)
 \@outlinefile=\write3
 \openout3 = `termpaper.out'.
@@ -481,37 +481,37 @@ LaTeX Info: Redefining \nameref on input line 72.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-4.
+3.
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-4.
+3.
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-74.
+73.
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-74.
+73.
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 74.
+(Font)              <14.4> on input line 73.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 74.
+(Font)              <10> on input line 73.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 74.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
+(Font)              <7> on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
 
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
 
 (/Users/aniketsingh/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -530,12 +530,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/Users/aniketsingh/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
 p}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 126--144
+Underfull \hbox (badness 10000) in paragraph at lines 125--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--159
+Underfull \hbox (badness 10000) in paragraph at lines 146--158
 
  []
 
@@ -544,39 +544,38 @@ pt>
 File: ~/AirBnbSeniorProject/images/variableBest.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/variableBest.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/variableBest.png  used on
- input line 162.
+ input line 161.
 (pdftex.def)             Requested size: 375.814pt x 232.20557pt.
 <~/AirBnbSeniorProject/images/plotAIC.png, id=121, 1045.9075pt x 525.965pt>
 File: ~/AirBnbSeniorProject/images/plotAIC.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/plotAIC.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/plotAIC.png  used on inpu
-t line 164.
+t line 163.
 (pdftex.def)             Requested size: 375.80824pt x 188.9861pt.
 [3] [4 </Users/aniketsingh/AirBnbSeniorProject/images/variableBest.png> </Users
 /aniketsingh/AirBnbSeniorProject/images/plotAIC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 172--181
+
+ []
+
 <~/AirBnbSeniorProject/images/linear.png, id=135, 1204.5pt x 796.9775pt>
 File: ~/AirBnbSeniorProject/images/linear.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/linear.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/linear.png  used on input
- line 183.
+ line 184.
 (pdftex.def)             Requested size: 328.82167pt x 217.57033pt.
 [5 </Users/aniketsingh/AirBnbSeniorProject/images/linear.png>]
 <~/AirBnbSeniorProject/images/ridge.jpeg, id=149, 1115.16624pt x 466.74374pt>
 File: ~/AirBnbSeniorProject/images/ridge.jpeg Graphic file (type jpg)
 <use ~/AirBnbSeniorProject/images/ridge.jpeg>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/ridge.jpeg  used on input
- line 199.
+ line 201.
 (pdftex.def)             Requested size: 328.81805pt x 137.6241pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--210
-
- []
-
 <~/AirBnbSeniorProject/images/tree.png, id=152, 462.528pt x 346.896pt>
 File: ~/AirBnbSeniorProject/images/tree.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/tree.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/tree.png  used on input l
-ine 213.
+ine 216.
 (pdftex.def)             Requested size: 328.8418pt x 246.63135pt.
 [6 </Users/aniketsingh/AirBnbSeniorProject/images/ridge.jpeg> </Users/aniketsin
 gh/AirBnbSeniorProject/images/tree.png (PNG copy)>]
@@ -584,26 +583,26 @@ gh/AirBnbSeniorProject/images/tree.png (PNG copy)>]
 File: ~/AirBnbSeniorProject/images/random.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/random.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/random.png  used on input
- line 229.
+ line 232.
 (pdftex.def)             Requested size: 422.77621pt x 281.31126pt.
 <~/AirBnbSeniorProject/images/corr.png, id=167, 1056.94875pt x 698.61pt>
 File: ~/AirBnbSeniorProject/images/corr.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/corr.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/corr.png  used on input l
-ine 248.
+ine 251.
 (pdftex.def)             Requested size: 328.82805pt x 217.34503pt.
 [7 </Users/aniketsingh/AirBnbSeniorProject/images/random.png (PNG copy)>]
 <~/AirBnbSeniorProject/images/outPrice.png, id=178, 556.0775pt x 356.33125pt>
 File: ~/AirBnbSeniorProject/images/outPrice.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/outPrice.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/outPrice.png  used on inp
-ut line 268.
+ut line 271.
 (pdftex.def)             Requested size: 187.9014pt x 120.40613pt.
 <~/AirBnbSeniorProject/images/Price.png, id=179, 564.1075pt x 346.29375pt>
 File: ~/AirBnbSeniorProject/images/Price.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/Price.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/Price.png  used on input 
-line 277.
+line 280.
 (pdftex.def)             Requested size: 234.87492pt x 144.18478pt.
 [8 </Users/aniketsingh/AirBnbSeniorProject/images/corr.png> </Users/aniketsingh
 /AirBnbSeniorProject/images/outPrice.png>]
@@ -611,16 +610,16 @@ line 277.
 File: ~/AirBnbSeniorProject/images/nhgPrice.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/nhgPrice.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/nhgPrice.png  used on inp
-ut line 289.
+ut line 292.
 (pdftex.def)             Requested size: 281.85634pt x 187.22586pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--298
+Underfull \hbox (badness 10000) in paragraph at lines 296--301
 
  []
 
 [9 </Users/aniketsingh/AirBnbSeniorProject/images/Price.png> </Users/aniketsing
 h/AirBnbSeniorProject/images/nhgPrice.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 301--305
+Underfull \hbox (badness 10000) in paragraph at lines 304--308
 
  []
 
@@ -628,15 +627,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 301--305
 File: ~/AirBnbSeniorProject/images/rmtype.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/rmtype.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/rmtype.png  used on input
- line 308.
+ line 311.
 (pdftex.def)             Requested size: 281.86288pt x 193.12827pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--355
+Underfull \hbox (badness 10000) in paragraph at lines 330--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--355
+Underfull \hbox (badness 10000) in paragraph at lines 330--349
 
  []
 
@@ -645,27 +644,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 327--355
 File: ~/AirBnbSeniorProject/images/cross.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/cross.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/cross.png  used on input 
-line 358.
+line 352.
 (pdftex.def)             Requested size: 328.83656pt x 197.70364pt.
 [11 </Users/aniketsingh/AirBnbSeniorProject/images/cross.png>]
 <~/AirBnbSeniorProject/images/bootstrap.png, id=218, 853.1875pt x 512.91624pt>
 File: ~/AirBnbSeniorProject/images/bootstrap.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/bootstrap.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/bootstrap.png  used on in
-put line 375.
+put line 368.
 (pdftex.def)             Requested size: 328.83621pt x 197.68858pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--401
+Underfull \hbox (badness 10000) in paragraph at lines 374--394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--401
+Underfull \hbox (badness 10000) in paragraph at lines 374--394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--401
+Underfull \hbox (badness 10000) in paragraph at lines 374--394
 
  []
 
@@ -674,21 +673,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 381--401
 File: ~/AirBnbSeniorProject/images/rmse.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/rmse.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/rmse.png  used on input l
-ine 404.
+ine 397.
 (pdftex.def)             Requested size: 328.84396pt x 282.18367pt.
 <~/AirBnbSeniorProject/images/tuned.png, id=229, 809.0225pt x 559.08875pt>
 File: ~/AirBnbSeniorProject/images/tuned.png Graphic file (type png)
 <use ~/AirBnbSeniorProject/images/tuned.png>
 Package pdftex.def Info: ~/AirBnbSeniorProject/images/tuned.png  used on input 
-line 418.
+line 411.
 (pdftex.def)             Requested size: 281.85358pt x 194.7797pt.
 [13 </Users/aniketsingh/AirBnbSeniorProject/images/rmse.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 425--440
+Underfull \hbox (badness 10000) in paragraph at lines 418--433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--440
+Underfull \hbox (badness 10000) in paragraph at lines 418--433
 
  []
 
@@ -697,12 +696,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 425--440
 
 ] (./termpaper.aux)
 Package rerunfilecheck Info: File `termpaper.out' has not changed.
-(rerunfilecheck)             Checksum: 7D17D845C3DCCBB94C6528EAC5C651A8;3050.
+(rerunfilecheck)             Checksum: F464FD772D09AB7E63D323DAE0BB1319;2992.
  ) 
 Here is how much of TeX's memory you used:
  11275 strings out of 480954
  165775 string characters out of 5906192
- 478223 words of memory out of 5000000
+ 478132 words of memory out of 5000000
  28225 multiletter control sequences out of 15000+600000
  453321 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -716,7 +715,7 @@ b></Users/aniketsingh/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pf
 b></Users/aniketsingh/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pf
 b></Users/aniketsingh/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.p
 fb>
-Output written on termpaper.pdf (15 pages, 921911 bytes).
+Output written on termpaper.pdf (15 pages, 921236 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  238 compressed objects within 3 object streams

@@ -1,6 +1,5 @@
 ---
 title: "AirBnB Price Prediction "
-author: "Aniket K Singh"
 date: "`r format(Sys.time(), '%B %e, %Y')`"
 fontsize: 12pt
 bibliography: ["one.bib"]
@@ -54,7 +53,7 @@ We plan to build a machine learning model using some Machine Learning algorithms
 
 \subsection{Linear Regression }
 
-  Linear regression is a technique used to model the relationships between observed variables. The idea behind simple linear regression is to "fit" the observations of two variables into a linear relationship between them. Graphically, the task is to draw the line that is "best-fitting" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other. \cite{LinearRegression}
+Linear Regression is a technique that is widely used in Statistics, Statistical Learning, and also in Machine Learning. Linear Regression Model focused on modeling the relationship between observed variables. A simple linear regression model fit a line between the observation of two variables, that line is also called "line of best fit". The task is to draw "line of best fit" or "closest" to the points ($x_i$,$y_i$), where $x_i$ and $y_i$ are observations of the two variables which are expected to depend linearly on each other. \cite{LinearRegression}  
 \begin{figure}
   \centering
     \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/linear.png}
@@ -63,8 +62,8 @@ We plan to build a machine learning model using some Machine Learning algorithms
 
 \subsection{Ridge Regression}
 
-  Ridge Regression is a technique for analyzing multiple regression data that suffer from multicollinearity. When multicollinearity occurs, least squares estimates are unbiased, but their variances are large so they may be far from the true value. By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors.
-It is hoped that the net effect will be to give estimates that are more reliable. \cite{RidgeRregression}
+  Ridge Regression is also a technique that is widely used in Statistics, Statistical Learning, and in Machine Learning. Ridge Regression is used when regression data suffer from multicollinearity. Ridge Regression introduces some degree of bias to the regression estimates, which may prevent overfitting of data. Introducing some bias may provide a better long term prediction and reduce the standard errors.  
+It is hoped that results are better as the model doesn't overfit the training set.  \cite{RidgeRregression}
 \newpage
 \begin{figure}
   \centering
@@ -72,10 +71,9 @@ It is hoped that the net effect will be to give estimates that are more reliable
     \caption{Ridge Regression figure from \cite{RIDGEFIGURE}}
 \end{figure}
 
-\subsection{Decision Tree Regression }
+\subsection{Decision Tree }
 
-  Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes.\cite{DecisionTreee}
-\
+  Decision tree is also a model widely used in Machine Learning algorithms. Decision tree is used for both classification and Regression problems. Decision tree breaks down the dataset intro smaller subsets and simultaneously a decision tree is developed. Decision tree can be more like a flowchart, the final result is a tree with nodes and leafs.  \cite{DecisionTreee}
 \begin{figure}
   \centering
     \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/tree.png}
@@ -85,7 +83,7 @@ It is hoped that the net effect will be to give estimates that are more reliable
 
 \subsection{Random Forest Regression }
 
-A random forest is a meta estimator that fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree. \cite{RandomForestRegresso}
+A random forest is a model that uses multiple decision trees on various sub-samples of the dataset and uses the average of the all the decision tree results to improve the predictive accuracy while also controlling overfitiing. As the figure below shows, there are multiple deicison trees used and then the average is used as result of random forest. \cite{RandomForestRegresso}
 
 \begin{figure}
   \centering
@@ -99,7 +97,7 @@ A random forest is a meta estimator that fits a number of classifying decision t
 
 \subsubsection{Correlation Analysis}
 
-A \textbf{correlation coefficient} is a way to put a value to the relationship. Correlation coefficients have a value of between -1 and 1. A “0” means there is no linear relationship between the variables at all, while -1 or 1 means that there is a perfect negative or positive correlation (negative or positive correlation here refers to the type of graph the relationship will produce). \cite{Correlation}
+A \textbf{correlation coefficient}is a value that tells if there's a linear association between two variables. The values can be anywhere from "-1" to "1". A value of "0" indicates no linear association between observed variables. A negative value indicates a negative linear association between observed variables and positive indicates a positive linear association. \cite{Correlation}
 \begin{figure}
   \centering
     \includegraphics[width=0.7\textwidth]{~/AirBnbSeniorProject/images/corr.png}
@@ -110,7 +108,7 @@ As, we can see from the Correlation Plot above, our features are correlated to e
 
 \subsubsection{Price Analysis}
 
-Machine learning algorithms are sensitive to the range and distribution of attribute values. Data outliers can spoil and mislead the training process resulting in longer training times, less accurate models and ultimately poorer results. \cite{OutlierDetection}
+Machine Learning algorithms are typically sensitive to distribution of attribute values and range. Data outliers can mislead the training proccess and that would result us with a less accurate model and ultimately poor predictive accuracy. \cite{OutlierDetection}
 \
 In order to build a good model, it is important to have a dataset that doesn't have too many outliers. So we try to detect outliers in our prices. 
 \begin{figure}
@@ -150,12 +148,12 @@ As we can notice from our violin plot above, that getting an entire apartment is
 \subsection{Model Optimization and Tuning Techniques}
 In our models, we have used multiple optimization and tuning techniques for Random Forest Regression. Before we analyze our models and results, it is important to understand these techniques. Here are the techniques that we have used to tune models using Python. 
 \subsubsection{Cross Validation}
-Cross validation is a model evaluation method that is better than residuals. The problem with residual evaluations is that they do not give an indication of how well the learner will do when it is asked to make new predictions for data it has not already seen. One way to overcome this problem is to not use the entire data set when training a learner. Some of the data is removed before training begins. Then when training is done, the data that was removed can be used to test the performance of the learned model on "new" data. This is the basic idea for a whole class of model evaluation methods called cross validation. \cite{CrossValidation}
+"Cross validation is a model evaluation method that is better than residuals. The problem with residual evaluations is that they do not give an indication of how well the learner will do when it is asked to make new predictions for data it has not already seen. One way to overcome this problem is to not use the entire data set when training a learner. Some of the data is removed before training begins. Then when training is done, the data that was removed can be used to test the performance of the learned model on "new" data. This is the basic idea for a whole class of model evaluation methods called cross validation." \cite{CrossValidation}
 \
-There are many \textbf{Cross Validation} techniques, but we have used \textbf{K-fold Cross Validation}. 
+There are many Cross Validation techniques, but we have used \textbf{K-fold Cross Validation}. 
 \
 \
-\textbf{K-fold Cross Validation} is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. The advantage of this method is that it matters less how the data gets divided. Every data point gets to be in a test set exactly once, and gets to be in a training set k-1 times. The variance of the resulting estimate is reduced as k is increased. The disadvantage of this method is that the training algorithm has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. A variant of this method is to randomly divide the data into a test and training set k different times. The advantage of doing this is that you can independently choose how large each test set is and how many trials you average over. \cite{CrossValidation}
+"\textbf{K-fold Cross Validation} is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed." \cite{CrossValidation}
 \
 \begin{figure}
   \centering
@@ -164,8 +162,7 @@ There are many \textbf{Cross Validation} techniques, but we have used \textbf{K-
 \end{figure}
 \newpage
 \subsubsection{Bootstrapping}
-\
-Bootstrap aggregating, also called bagging (from bootstrap aggregating), is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the model averaging approach. \cite{Bootstrap}
+"Bootstrap aggregating, also called bagging (from bootstrap aggregating), is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the model averaging approach." \cite{Bootstrap}
 
 \begin{figure}
   \centering
