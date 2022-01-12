@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.4)  6 MAY 2021 23:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.4)  12 JAN 2022 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -701,7 +701,7 @@ Package rerunfilecheck Info: File `termpaper.out' has not changed.
 Here is how much of TeX's memory you used:
  11275 strings out of 480954
  165775 string characters out of 5906192
- 478132 words of memory out of 5000000
+ 478137 words of memory out of 5000000
  28225 multiletter control sequences out of 15000+600000
  453321 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -715,7 +715,7 @@ b></Users/aniketsingh/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pf
 b></Users/aniketsingh/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pf
 b></Users/aniketsingh/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.p
 fb>
-Output written on termpaper.pdf (15 pages, 921236 bytes).
+Output written on termpaper.pdf (15 pages, 921239 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  238 compressed objects within 3 object streams
